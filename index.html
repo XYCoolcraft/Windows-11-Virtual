@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Windows 11 Virtual</title>
+    
+    <meta property="og:title" content="Windows 11 Virtual" />
+    
+    <meta property="og:type" content="website" />
+    
+    <meta property="og:description" content="Windows 11 Virtual in Browser? Try It Now! Experience like you are using Windows 11! Created By: XYCoolcraft" />
+    
+    <meta property="og:image" content="https://raw.githubusercontent.com/xycoolcraft/Windows-11-Virtual/main/assets/icons/preview-icon.png" />
+    
+    <meta property="og:url" content="https://xycoolcraft.github.io/Windows-11-Virtual/" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="virtual-screen">
+        <div id="desktop">
+            <div class="desktop-icon" ondblclick="openApp('browser')">
+                <img src="assets/icons/browser.png" alt="Browser">
+                <span>My Browser</span>
+            </div>
+            <div class="desktop-icon" ondblclick="openApp('notepad')">
+                <img src="assets/icons/notepad.png" alt="Notepad">
+                <span>Notepad</span>
+            </div>
+        </div>
+
+        <div class="window" id="browser-window" style="display:none;">
+            <div class="title-bar">
+                <span class="title">🌐 Microsoft Edge</span>
+                <div class="window-controls">
+                    <button class="minimize">-</button>
+                    <button class="maximize">ロ</button>
+                    <button class="close" onclick="closeApp('browser')">X</button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="browser-ui">
+                    <input type="text" id="browser-url" placeholder="Search with DuckDuckGo or enter address">
+                    <button id="browser-go">Go</button>
+                </div>
+                <iframe id="browser-content" src="https://duckduckgo.com/html" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class="window" id="notepad-window" style="display:none;">
+            <div class="title-bar">
+                <span class="title">📝 Notepad</span>
+                <div class="window-controls">
+                    <button class="minimize">-</button>
+                    <button class="maximize">ロ</button>
+                    <button class="close" onclick="closeApp('notepad')">X</button>
+                </div>
+            </div>
+            <div class="window-body">
+                <textarea class="notepad-content" placeholder="Mulai mengetik..."></textarea>
+            </div>
+        </div>
+
+        <div id="taskbar">
+            <div class="taskbar-icons">
+                <img src="assets/icons/start.png" alt="Start" id="start-button">
+                <img src="assets/icons/browser.png" alt="Browser" onclick="openApp('browser')">
+                <img src="assets/icons/notepad.png" alt="Notepad" onclick="openApp('notepad')">
+            </div>
+            <div id="taskbar-clock"></div>
+        </div>
+    </div>
+    
+    <div id="virtual-keyboard" style="display:none;">
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
